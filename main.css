@@ -1,0 +1,120 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #F3F3F3;
+  font-family: "Roboto", "Helvetica", sans-serif;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+.page .header {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #171717;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+}
+.page .header__title {
+  color: #FFCE00;
+  font-size: 28px;
+  font-weight: 900;
+}
+.page .header__title span {
+  font-weight: 300;
+}
+.page .main {
+  flex: 1;
+  overflow: scroll;
+}
+.page .main .slider {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100%;
+}
+.page .main .slider__slide {
+  position: absolute;
+  transform: translateY(-100%);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s linear;
+  background-position: center center;
+  background-size: cover;
+}
+.page .main .slider__slide .slider__content {
+  position: absolute;
+  width: 100%;
+  max-width: 600px;
+  top: 0px;
+  padding: 15px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s linear 0.5s;
+  transform: translateX(-100%);
+  color: #F3F3F3;
+}
+@media only screen and (min-width: 600px) {
+  .page .main .slider__slide .slider__content {
+    border-radius: 0px 0px 50px 0px;
+  }
+}
+.page .main .slider__slide .slider__content .slider__title span {
+  display: block;
+  font-weight: 300;
+}
+.page .main .slider__slide.active {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.page .main .slider__slide.active .slider__content {
+  transform: translateX(0%);
+}
+.page .main .slider__btns {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.page .main .slider__btns .slider__btn {
+  width: 35px;
+  height: 35px;
+  color: #FFCE00;
+  font-size: 20px;
+  line-height: 35px;
+  text-align: center;
+  font-weight: 300;
+  border-radius: 50%;
+  background: none;
+  border: 1px solid #FFCE00;
+  cursor: pointer;
+  transition: background 0.2s linear, color 0.2s ease-out;
+}
+.page .main .slider__btns .slider__btn:hover {
+  background: #FFCE00;
+  color: #171717;
+}
+.page .footer {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #171717;
+  color: #F3F3F3;
+}
+
+/*# sourceMappingURL=main.css.map */
